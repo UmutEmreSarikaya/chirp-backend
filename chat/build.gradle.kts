@@ -1,9 +1,7 @@
 plugins {
-    alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.kotlin.spring)
-    alias(libs.plugins.spring.boot)
-    alias(libs.plugins.spring.dependency.management)
-    alias(libs.plugins.kotlin.jpa)
+    id("java-library")
+    id("chirp.spring-boot-service")
+    kotlin("plugin.jpa")
 }
 
 group = "com.uesar"
@@ -15,6 +13,7 @@ repositories {
 }
 
 dependencies {
+        implementation(projects.common)
     testImplementation(kotlin("test"))
 }
 
